@@ -1,0 +1,29 @@
+{
+  "name": "bill-hannah-blog",
+  "version": "1.0.0",
+  "description": "Gatsby blog without starters",
+  "main": "index.js",
+  "author": "Bill Hannah",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "cross-env GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "gatsby": "^2.23.11",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "cross-env": "^7.0.2",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
+  }
+}
