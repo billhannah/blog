@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4a1d373-fe30-4f10-9069-bfa715c032b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/billhannah.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blog-theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/2020-06-22/html-email-is-harder-than-it-should-be.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posts/2020-06-27/antiracist.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/layout/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/post-preview/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-posts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/use-site-metadata.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/about.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/contact.mdx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/templates/post.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/color-utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +32,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="tsconfig.json" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -49,7 +61,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CSS&#10;TEXT" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/fonts" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -62,9 +76,21 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fonts" />
+      <recent name="$PROJECT_DIR$/src/templates" />
+      <recent name="$PROJECT_DIR$/src/components/layout" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/fonts" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,21 +105,52 @@
       <workItem from="1593230273994" duration="652000" />
       <workItem from="1593230961701" duration="2551000" />
       <workItem from="1593235721607" duration="1342000" />
-      <workItem from="1593241627104" duration="1213000" />
+      <workItem from="1593241627104" duration="10337000" />
+      <workItem from="1593555744670" duration="803000" />
+      <workItem from="1593833586749" duration="6664000" />
+      <workItem from="1594036707029" duration="8722000" />
+      <workItem from="1594262802620" duration="599000" />
+      <workItem from="1594374403126" duration="4973000" />
+      <workItem from="1594786611882" duration="7000" />
+      <workItem from="1594800871841" duration="1991000" />
+      <workItem from="1594866269285" duration="9000" />
+      <workItem from="1596883333397" duration="9955000" />
+      <workItem from="1597060641482" duration="2607000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/blog-theme.js" />
+      </list>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="701" y="412" key="#ESLint" timestamp="1593231198769">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
     <state x="701" y="412" key="#ESLint/0.23.1680.980@0.23.1680.980" timestamp="1593231198769" />
-    <state x="341" y="152" key="SettingsEditor" timestamp="1593241889659">
+    <state x="474" y="198" key="#Inspections" timestamp="1594801755144">
       <screen x="0" y="23" width="1680" height="980" />
     </state>
-    <state x="341" y="152" key="SettingsEditor/0.23.1680.980@0.23.1680.980" timestamp="1593241889659" />
+    <state x="474" y="198" key="#Inspections/0.23.1680.980@0.23.1680.980" timestamp="1594801755144" />
+    <state x="627" y="268" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594041537493">
+      <screen x="0" y="23" width="1680" height="980" />
+    </state>
+    <state x="627" y="268" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.980@0.23.1680.980" timestamp="1594041537493" />
+    <state x="417" y="88" key="CommitChangelistDialog2" timestamp="1593258623670">
+      <screen x="0" y="23" width="1680" height="980" />
+    </state>
+    <state x="417" y="88" key="CommitChangelistDialog2/0.23.1680.980@0.23.1680.980" timestamp="1593258623670" />
+    <state x="341" y="152" key="SettingsEditor" timestamp="1593257290408">
+      <screen x="0" y="23" width="1680" height="980" />
+    </state>
+    <state x="341" y="152" key="SettingsEditor/0.23.1680.980@0.23.1680.980" timestamp="1593257290408" />
+    <state x="505" y="239" width="670" height="676" key="search.everywhere.popup" timestamp="1594378640960">
+      <screen x="0" y="23" width="1680" height="980" />
+    </state>
+    <state x="505" y="239" width="670" height="676" key="search.everywhere.popup/0.23.1680.980@0.23.1680.980" timestamp="1594378640960" />
   </component>
 </project>

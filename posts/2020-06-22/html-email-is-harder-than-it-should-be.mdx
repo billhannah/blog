@@ -1,0 +1,76 @@
+---
+title: HTML Email is harder than it sounds (and harder than it should be)
+slug: html-email-is-harder
+author: Bill Hannah
+---
+
+If you ever need to create an HTML email template for the first time, it sounds like it will be easy. Isn't just like a static web page?
+
+Short answer? No. HTML support in email has taken a very different path than HTML in the browser and you need to learn how we did HTML back in the 90s.
+
+Long answer below:
+
+## In the beginning
+
+I wrote my first email template in 2005. At the time, Frontend development was still in its infancy. You needed to support IE5. Most websites used HTML Tables for layout. Javascript was rarely used.
+
+So an email template was just a like static site where instead of putting CSS in the head, we would inline the styles because the `<head>` would be discarded and that was the only place to put your `<style>` tag. Also, external CSS files would not be downloaded for security reasons.
+
+The major desktop email clients at the time were Outlook Express (the mail free email app included in Windows), Thunderbird, Outlook and Mac's email client. There was Yahoo Mail, Hotmail, and Outlook Web Access for web clients. It had some challenges, but was pretty easy.
+
+I should mention that there was also Lotus Notes, but it was very, very ugly because it had almost no support for HTML. But since Lotus Notes would be ugly no matter what you did, you just ignored it unless specifically asked to make it work there. Their users were used to ugly. It would be like continuing to support IE9 now.
+
+## The Email apocalypse
+
+In 2007, it got so much harder. Microsoft made a controversial decision that still reverberates to this day.
+
+Outlook had a problem. If you wrote an email in Outlook, the editor was Word. When you viewed the email, it was rendered in IE 6. Outlook Express was the same. So, the email you sent might not necessarily match what the recipient saw, and there was no way to preview it. On top of that, IE 6 was having regular security issues. So, Microsoft decided it would use Word for rendering emails.
+
+This caused a huge problem. The HTML and CSS support in Word was terrible. The company I worked for specialized in marketing emails and we had to test and fix thousands of emails and hundreds of email templates with only a few months notice.
+
+Fast forward 13 years. What's changed? If you write an email template in HTML you have to support rendering using Word. And almost nothing has changed in the renderer. Some CSS from level 1 still aren't fully supported. For example, you can put padding on some elements (like `<td>`) but not on others (like `<div>`). IE4 and Netscape Navigator had better standards support.
+
+But it's not just Outlook. All other email clients do not support all of the HTML and CSS specifications. Also, each email client has different support. You can have a `<style>` tag in the `<head>` in some clients. You can have a `<style>` tag in the `<body>` of some other email clients. Some HTML tags are not supported at all (such as `<form>` and `<iframe>` elements). No Javascript, so no ability to check APIs to change the HTML for different clients.
+
+Why the restrictions? Security. When you're browsing the web, you enter a URL or click on a link. You usually know where you're going to go.  Most users would never type something like `http://iwillpwnu.com` into the address bar.
+When you open an email, you can't be sure where it actually came from. It's pretty easy to spoof the from address. Spam usually tries to look like it's from someone you trust. And a common "feature" of malware is sending email from your computer without you knowing. So just by opening the email, you can infect the OS. So to reduce security risk, you restrict what's allowed.
+
+## What does this all mean?
+
+Pretend you're writing HTML for 1999. Us senior developers (in age, not experience) still remember how to do this. Tables for layout. Basic CSS only. Conditional comments (a Microsoft "feature" where a comment that wraps some HTML that the browser will render if it's a specific version). Inline styles. And lots of testing. If you think testing is hard for the web, you ain't seen nothing yet.
+
+When I'm testing for the web, I tend to stick with 5 browsers: IE11, Safari, Edge, Chrome, and Firefox. Sounds like a lot.
+When I'm testing for email, I need to test in at least the following:
+* Gmail
+* Outlook.com
+* Outlook (2013, 2016, 2019)
+*  Outlook for Mac (2016, 2019)
+*  Apple Mail (Mac and iOS)
+*  Gmail app (iOS and Android)
+*  Samsung app (Android)
+*  Thunderbird (Mac and Windows)
+*  Windows 10 mail
+
+That's 15. And each client has different restrictions and support. Here's an example. If you want to have a link that looks like a button in the center of the parent, you would do something like the following:
+
+```html
+<a href="http://somewhere.com/my/link.html" style="text-decoration: none" class="button">
+  <table cellpadding="0" cellspacing="0" border="0" width="200" align="center" style="margin: auto; border-radius: 2px; background-color:red; color: white;">
+    <tr>
+      <td style="padding: 20px">Click me</td>
+    </tr>
+  </table>
+</a>
+```
+The reason? First, you can't put padding, margin or `display: block` on the `<a>` tag in Outlook. If you put the link inside the table cell, only the text will be clickable. You can't use a div, because `padding: 20px` doesn't work in Outlook. So you use a table. Next, `margin:auto` isn't supported in Outlook, so this button won't be centered. If you really, really need it, you can wrap another table around the anchor and set `align=center` on the table cell. Now, if you want to change the button on hover, you have to add a class to a `<style>` tag to the body with `button:hover { background-color: darkred }`. This won't be supported in Outlook.
+
+So something that would normally take a few lines of CSS and HTML now becomes much more complex. And even with all these workarounds, it still doesn't do everything in Outlook that you could do in IE5 back in 1998.
+
+My advice?
+
+1. Avoid HTML emails if you can.
+1. If this isn't possible, use a 3rd party email authoring system.
+1.  If this isn't possible, find a service where you can at least automatically test the emails.
+1. And if that isn't possible, keep it as simple as you can.
+
+There are a lot of resources on the web to guide you through these murky waters. And try to find recent guides. Support is always changing in Web clients and what used to work may not work now.
